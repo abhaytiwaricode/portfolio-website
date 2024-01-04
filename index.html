@@ -7,23 +7,83 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Wrapper -->
     <div id="wrapper">
       <div class="container">
+        <!-- Navbar -->
         <div class="navbar">
-
           <div class="logo-container">
             <img src="./images/userAsset/NavLogo.png" class="logo" />
             <div class="logo-text">bhay Tiwari</div>
           </div>
-
+          <!-- Nav Items -->
           <div class="nav-items">
             <div><a href="#projects">Projects</a></div>
             <div><a href="#skills">Skills</a></div>
             <div><a href="#contactme">Contact Me</a></div>
           </div>
-
         </div>
       </div>
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="faded-text">Abhay Tiwari</div>
+        <!-- Left Section -->
+        <div class="hero-section-left">
+          <!-- Heading -->
+          <div class="hero-section-heading">Hi! Abhay Tiwari</div>
+          <div class="hero-section-heading hero-section-sub-heading">
+            I am a <span class="role"></span>
+          </div>
+          <!-- Description -->
+          <div class="hero-section-description">
+            I'm a MERN stack developer and here is my portfolio website. Here
+            you'll learn about my journey as a MERN stack developer.
+          </div>
+          <!-- Button -->
+          <button class="btn-pink" id="btn">Hire me</button>
+        </div>
+        <!-- Right Section -->
+        <div class="hero-section-right">
+          <div class="absolute icons icon-dots">
+            <img src="./images/userAsset/dots.png" alt="dots" />
+          </div>
+          <div class="absolute icons icon-cube">
+            <img src="./images/userAsset/cube.png" alt="cube" />
+          </div>
+          <div class="absolute icons icon-circle">
+            <img src="./images/userAsset/circle.png" alt="circle" />
+          </div>
+          <div class="absolute icons icon-zigzak">
+            <img src="./images/userAsset/zigzags.png" alt="zigzags" />
+          </div>
+          <div class="absolute icons icon-plus">
+            <img src="./images/userAsset/plus.png" alt="plus" />
+          </div>
+          <div class="user-image">
+            <img
+              src="./images/userAsset/User-Image.png"
+              alt="User-Image"
+              width="345"
+              height="390"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Project Section -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script
+      src="https://kit.fontawesome.com/58a810656e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var typeData = new Typed('.role', {
+        strings: ['MERN Stack Developer', 'Coder'],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1000,
+      });
+    </script>
   </body>
 </html>
