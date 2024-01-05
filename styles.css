@@ -1,77 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+:root {
+  --bgOrange: #e84949;
+}
+body {
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   scroll-behavior: smooth;
 }
-
-:root {
-  --bgOrange: #e84949;
-  /* #e84949  #4e45d5*/
+a{
+  text-decoration: none;
 }
-
-body {
-  /* height: 100vh;
-  overflow-y: auto; */
-  overflow-x: hidden;
-}
-
-/* NavBar Start */
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Navbnar Style Start*/
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding-top: 1rem;
 }
-
-.logo {
-  width: 100px;
-}
-
-.logo-container {
+.logo-group {
   display: flex;
   justify-content: baseline;
   align-items: center;
 }
-
-.logo-text {
-  margin-left: -1.2rem;
-  font-size: 25px;
+.nav-logo {
+  width: 70px;
+  z-index: -1;
 }
-
+.nav-logo-text {
+  margin-left: -0.9rem;
+  font-size: 20px;
+}
 .nav-items {
   display: flex;
   gap: 2rem;
   padding: 0 4em;
 }
-
 .nav-items div {
+  transition: all 0.5s;
   font-size: 20px;
-  font-weight: 500;
   cursor: pointer;
+  font-weight: 500;
 }
-
 .nav-items div a {
-  color: black;
+  color: #000
 }
-
-a {
-  text-decoration: none;
-}
-
 .nav-items div:hover {
+  transition: all 0.8s;
+  color: var(--bgOrange);
   font-weight: bold;
-  transition: 0.8s;
 }
-
 @media (max-width:1500px) {
   .nav-items {
     padding: 0 8em;
@@ -82,9 +68,10 @@ a {
     display: none;
   }
 }
-/* NavBar End */
+/* Navbar Style End */
 
 /* Hero Section Start */
+/* Hero Left Section Start */
 .hero-section {
   position: relative;
   display: flex;
@@ -98,15 +85,16 @@ a {
 
 .faded-text {
   user-select: none;
-  font-size: 6rem;
+  font-size: 7em;
   color: rgb(231, 231, 231);
-  bottom: -16%;
+  z-index: -0;
+  bottom: -12%;
   left: -5%;
   font-weight: bold;
   transition: all 3s;
 }
-
 .hero-section-left {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,25 +104,21 @@ a {
 .hero-section-heading {
   font-size: 35px;
   color: #343d68;
+  font-weight: 500;
 }
-
+.herosection-sub-heading {
+  font-size: 45px;
+  line-height: 45px;
+}
 .role {
   color: #4e45d5;
   font-weight: 800;
 }
-
-.hero-section-sub-heading {
-  font-size: 45px;
-  line-height: 45px;
-}
-
 .hero-section-description {
   margin-top: 1rem;
   width: 70%;
-  font-size: 17px;
   font-weight: 500;
 }
-
 .btn-pink {
   background-color: var(--bgOrange);
   width: fit-content;
@@ -150,7 +134,7 @@ a {
   z-index: 1;
 }
 .btn-pink::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: #fff;
   top: 0px;
@@ -169,7 +153,11 @@ a {
   border: solid 3px var(--bgOrange);
   color: black;
 }
-
+#btn-bottom {
+  display: none;
+}
+/* Hero Left Section End */
+/* Hero Right Section Start */
 .hero-section-right {
   position: relative;
 }
@@ -186,7 +174,6 @@ a {
   object-fit: cover;
   z-index: -9;
 }
-
 @keyframes scaleImage {
   0% {
     filter: grayscale(1);
@@ -278,7 +265,7 @@ a {
     left: 48%;
   }
 }
-
+/* Hero Right Section End */
 @media (max-width:1300px) {
   .hero-section {
     flex-direction: column;
@@ -307,7 +294,7 @@ a {
     scale: 0.7;
   }
 }
-/* Hero Section End */
+/* Hero section end */
 
 /* Project Section Start */
 .project-section {
@@ -317,9 +304,9 @@ a {
 
 .page-header {
   color: var(--bgOrange);
-  font-size: 90px;
-  text-align: center;
   padding-top: 30px;
+  text-align: center;
+  font-size: 90px;
 }
 
 .project-container {
@@ -334,6 +321,8 @@ a {
 .project-card {
   width: 90%;
   height: 550px;
+  /* background-image: url(./projects/project1.png); */
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   box-shadow: 0px 0px 40px #1f1f1f;
@@ -341,28 +330,31 @@ a {
 }
 
 .project-card::after {
-  content: '';
+  content: "";
+  color: #fff;
   position: absolute;
+  background: #1f1f1f9a;
+  z-index: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #1f1f1f9a;
-  z-index: 0;
+  transform: scaleX(1);
 }
 
 .project-card::before {
-  content: '';
+  content: "";
+  color: #fff;
   position: absolute;
+  background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
   transform: scaleX(0);
   transform-origin: left;
   transition: all 0.4s;
-  z-index: 1;
 }
 
 .project-card:hover::before {
@@ -371,11 +363,13 @@ a {
 
 .project-number {
   position: absolute;
-  font-size: 100px;
-  font-weight: 800;
-  color: white;
-  z-index: 10;
+  font-size: 200px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
   display: none;
+  z-index: 10;
+  transition-delay: 1s;
+  transition: transform 2s;
 }
 
 .project-card:hover .project-number {
@@ -393,14 +387,14 @@ a {
 }
 
 .project-content {
-  position: absolute;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   color: white;
   padding: 2em;
   bottom: 20%;
+  position: absolute;
   z-index: 5;
-  gap: 1em;
   transition: all 0.4s;
 }
 
@@ -424,13 +418,14 @@ a {
 }
 
 .project-heading {
-  font-size: 45px;
+  font-size: 50px;
+  font-weight: bold;
   line-height: 3rem;
 }
 
 .project-sub-heading {
   width: 70%;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
 }
 
@@ -451,13 +446,13 @@ a {
 
 .icon {
   cursor: pointer;
-  color: white;
   font-size: 35px;
-  transition: color 0.4s;
+  transition: all 0.4s;
+  color: #fff;
 }
 
 .icon:hover {
-  column-rule: var(--bgOrange);
+  color: #e84949;
 }
 
 .project-card:hover .project-content {
@@ -482,7 +477,7 @@ a {
   background-image: url(./images/projects/Project4.png);
 }
 
-@media (max-width:1300px) {
+@media (max-width: 1300px) {
   .page-header {
     padding-top: 30px;
     color: var(--bgOrange);
@@ -539,6 +534,7 @@ a {
   }
 }
 /* Project Section Start */
+
 /* Skills Section Start */
 .skills-container {
   position: relative;
@@ -553,12 +549,12 @@ a {
   width: 50%;
 }
 .skill-fade-text {
-  font-size: 15em;
+  font-size: 8em;
   font-weight: bold;
   color: rgb(231, 231, 231);
   bottom: -34.5%;
   overflow-y: hidden;
-  right: -25%;
+  right: -5%;
   user-select: none;
 }
 .skill-container-right {
@@ -764,6 +760,7 @@ footer {
 }
 .link-wrapper div a {
   color: white;
+  cursor: pointer;
   text-decoration: none;
   transition: all 0.6s;
 }
